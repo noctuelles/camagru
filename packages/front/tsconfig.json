@@ -1,13 +1,17 @@
 {
-  "extends": "../tsconfig",
+  "extends": "../../tsconfig",
   "compilerOptions": {
     "module": "es6",
     "target": "es5",
+    "jsx": "preserve",
     "sourceMap": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true
   },
   "exclude": [
-    "node_modules"
-  ]
+    "node_modules",
+    "dist"
+  ],
+  "references": [],
+  "include": ["src", "index.d.ts"]
 }
