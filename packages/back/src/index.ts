@@ -1,9 +1,14 @@
-import express from 'express';
-import { isOdd } from '@camagru/common';
+import http from 'node:http';
+import { StatusCodes } from 'http-status-codes';
+import { client } from './database';
 
-const app = express();
+export type Test = string;
 
-app.listen(1234, async () => {
-  console.log('is odd', isOdd(23));
-  console.log('i change something, it gets recompiled, youpi');
-});
+http
+  .createServer((request, response) => {
+    console.log(request.headers);
+    response.statusCode = StatusCodes.OK;
+    response.write('Hello world');
+    response.end();
+  })
+  .listen(8081);
