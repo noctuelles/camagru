@@ -1,6 +1,5 @@
 import http from 'node:http';
 import { StatusCodes } from 'http-status-codes';
-import { client } from './database';
 
 export type Test = string;
 
